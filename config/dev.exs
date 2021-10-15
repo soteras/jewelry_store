@@ -2,10 +2,11 @@ use Mix.Config
 
 # Configure your database
 config :jewelry_store, JewelryStore.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "jewelry_store_dev",
+  username: "store_user",
+  password: "store_password",
+  database: "store_dev",
   hostname: "localhost",
+  port: 5433,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
