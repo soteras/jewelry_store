@@ -10,6 +10,7 @@ config :jewelry_store, JewelryStore.Repo,
   password: "store_password",
   database: "store_test",
   hostname: "localhost",
+  port: System.get_env("DB_PORT", "5433") |> String.to_integer(),
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
