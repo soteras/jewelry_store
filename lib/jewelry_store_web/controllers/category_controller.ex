@@ -2,8 +2,8 @@ defmodule JewelryStoreWeb.CategoryController do
   use JewelryStoreWeb, :controller
   use OpenApiSpex.ControllerSpecs
 
-  alias JewelryStoreWeb.Swagger.{CategorySchema, Security}
   alias JewelryStore.Products
+  alias JewelryStoreWeb.Swagger.{CategorySchema, Security}
   alias OpenApiSpex.Schema
 
   action_fallback JewelryStore.FallbackController

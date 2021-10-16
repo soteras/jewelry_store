@@ -8,8 +8,8 @@ defmodule JewelryStoreWeb.ConnCase do
       import JewelryStoreWeb.ConnCase
       import JewelryStore.Factory
 
-      alias JewelryStoreWeb.Router.Helpers, as: Routes
       alias JewelryStore.Authentication
+      alias JewelryStoreWeb.Router.Helpers, as: Routes
 
       @endpoint JewelryStoreWeb.Endpoint
 
@@ -17,9 +17,8 @@ defmodule JewelryStoreWeb.ConnCase do
       def get_errors(data), do: data["error"]["details"]
 
       def login(conn, user) do
-        with {:ok, token} <- Authentication.generate_refresh_token(user) do
-          put_req_header(conn, "authorization", "Bearer #{token}")
-        else
+        case Authentication.generate_refresh_token(user) do
+          {:ok, token} -> put_req_header(conn, "authorization", "Bearer #{token}")
           _ -> {:error, "Couldn't login"}
         end
       end
