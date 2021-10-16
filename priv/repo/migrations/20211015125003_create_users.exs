@@ -4,7 +4,7 @@ defmodule JewelryStore.Repo.Migrations.CreateUsers do
   def change do
     create table(:users) do
       add :name, :string, null: false
-      add :cpf, :string, null: false, size: 11
+      add :cpf, :string, null: false, size: 14
       add :rg, :string
       add :gender, :string, null: false, default: "female"
       add :nickname, :string

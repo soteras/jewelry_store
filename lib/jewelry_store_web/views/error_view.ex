@@ -16,4 +16,12 @@ defmodule JewelryStoreWeb.ErrorView do
       }
     }
   end
+
+  def render("error.json", %{error: error}) do
+    %{
+      error: %{
+        details: [error]
+      }
+    }
+  end
 end

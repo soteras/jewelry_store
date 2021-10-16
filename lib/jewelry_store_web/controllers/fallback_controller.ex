@@ -23,4 +23,11 @@ defmodule JewelryStore.FallbackController do
     |> put_view(ErrorView)
     |> render(:"403")
   end
+
+  def call(conn, {:error, error}) do
+    conn
+    |> put_status(:unprocessable_entity)
+    |> put_view(ErrorView)
+    |> render("error.json", error: error)
+  end
 end

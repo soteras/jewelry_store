@@ -13,6 +13,7 @@ defmodule JewelryStoreWeb.ConnCase do
       @endpoint JewelryStoreWeb.Endpoint
 
       def get_data(data, key), do: data["data"][key]
+      def get_errors(data), do: data["error"]["details"]
     end
   end
 

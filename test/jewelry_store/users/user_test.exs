@@ -56,18 +56,6 @@ defmodule JewelryStore.Users.UserTest do
 
       assert get_error_message(changeset, :cpf) == "has already been taken"
     end
-
-    test "less than 11" do
-      changeset = User.changeset(%User{}, %{@attrs | cpf: "1111111111"})
-
-      assert get_error_message(changeset, :cpf) == "should be %{count} character(s)"
-    end
-
-    test "less more than 11" do
-      changeset = User.changeset(%User{}, %{@attrs | cpf: "111111111111"})
-
-      assert get_error_message(changeset, :cpf) == "should be %{count} character(s)"
-    end
   end
 
   describe "changeset/2: gender" do

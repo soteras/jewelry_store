@@ -20,6 +20,8 @@ config :jewelry_store, JewelryStore.Authentication.Guardian,
   issuer: "jewelry_store",
   secret_key: "R4+b8vO3wZjyxSQbGfd0g2llE0zamq69iDX9ihP4uFl+nF5fD3BzFmKri4uFnGkZ"
 
+config :gettext, :default_locale, "pt_BR"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
