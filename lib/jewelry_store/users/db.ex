@@ -19,8 +19,20 @@ defmodule JewelryStore.Users.Db do
 
   @spec get_user_by_email_or_cpf(String.t()) :: user | nil
   def get_user_by_email_or_cpf(username) do
+    username =
+      username
+      |> String.downcase()
+      |> format_cpf_or_term()
+
     user_base_query()
     |> get_user_by_email_or_cpf(username)
     |> Repo.one()
+  end
+
+  defp format_cpf_or_term(username) do
+    case Brcpfcnpj.cpf_format(%Cpf{number: username}) do
+      nil -> username
+      cpf -> cpf
+    end
   end
 end

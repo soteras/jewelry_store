@@ -12,8 +12,6 @@ defmodule JewelryStore.Users.Queries do
 
   @spec get_user_by_email_or_cpf(query, term) :: query
   def get_user_by_email_or_cpf(query, term) do
-    term = String.downcase(term)
-
     query
     |> where([u], u.email == ^term)
     |> or_where([u], u.cpf == ^term)
