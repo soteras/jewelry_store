@@ -45,7 +45,7 @@ defmodule JewelryStoreWeb.Auth.SigninControllerTest do
 
       assert data = json_response(response, 422)
 
-      assert get_errors(data) == ["Email or password is invalid"]
+      assert get_errors(data) == ["E-mail ou CPF ou senha inválidos"]
     end
 
     test "password is wrong", %{conn: conn} do
@@ -57,7 +57,7 @@ defmodule JewelryStoreWeb.Auth.SigninControllerTest do
 
       assert data = json_response(response, 422)
 
-      assert get_errors(data) == ["Email or password is invalid"]
+      assert get_errors(data) == ["E-mail ou CPF ou senha inválidos"]
     end
   end
 end
