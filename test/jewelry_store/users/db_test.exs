@@ -37,4 +37,16 @@ defmodule JewelryStore.Users.DbTest do
       refute changeset.valid?
     end
   end
+
+  describe "get_user_by_id/1" do
+    test "returns user" do
+      user = insert(:user)
+
+      assert user.id == Db.get_user_by_id(user.id).id
+    end
+
+    test "returns nil" do
+      refute Db.get_user_by_id(1)
+    end
+  end
 end

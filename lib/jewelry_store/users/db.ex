@@ -11,4 +11,7 @@ defmodule JewelryStore.Users.Db do
     |> User.changeset(attrs)
     |> Repo.insert()
   end
+
+  @spec get_user_by_id(integer) :: user | nil
+  def get_user_by_id(id), do: Repo.get_by(User, id: id)
 end
