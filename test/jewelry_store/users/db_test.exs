@@ -21,7 +21,7 @@ defmodule JewelryStore.Users.DbTest do
       {:ok, user} = Db.create_user(@attrs)
 
       assert user.name == "Antonio Carlos"
-      assert user.cpf == "09986414059"
+      assert user.cpf == "099.864.140-59"
       assert user.rg == "273394721"
       assert user.gender == "male"
       assert user.nickname == "Antony"

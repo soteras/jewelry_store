@@ -34,7 +34,8 @@ defmodule JewelryStore.Users.User do
     |> validate_format(:email, Regex.email_regex())
     |> unique_constraint(:email)
     |> Brcpfcnpj.Changeset.validate_cpf(:cpf)
-    |> validate_length(:cpf, is: 11)
+    |> format_cpf
+    |> validate_length(:cpf, is: 14)
     |> unique_constraint(:cpf)
     |> validate_confirmation(:password)
     |> hash_password
@@ -49,4 +50,11 @@ defmodule JewelryStore.Users.User do
         changeset
     end
   end
+
+  defp format_cpf(%Ecto.Changeset{changes: %{cpf: cpf}} = changeset) do
+    cpf_formatted = Brcpfcnpj.cpf_format(%Cpf{number: cpf})
+    put_change(changeset, :cpf, cpf_formatted)
+  end
+
+  defp format_cpf(changeset), do: changeset
 end
