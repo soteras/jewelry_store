@@ -90,7 +90,7 @@ defmodule JewelryStoreWeb do
   def render_response(data, conn, status) do
     conn
     |> put_status(status)
-    |> put_view(CoreView)
+    |> put_view(JewelryStoreView)
     |> render("response.json", data: data)
   end
 
