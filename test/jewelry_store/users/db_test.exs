@@ -13,7 +13,8 @@ defmodule JewelryStore.Users.DbTest do
     cellphone: "(11) 98999-9999",
     email: "antonio@gmail.com",
     password: "abc12345",
-    password_confirmation: "abc12345"
+    password_confirmation: "abc12345",
+    admin: true
   }
 
   describe "create_user/1" do
@@ -29,6 +30,7 @@ defmodule JewelryStore.Users.DbTest do
       assert user.cellphone == "(11) 98999-9999"
       assert user.email == "antonio@gmail.com"
       assert is_binary(user.password_hash)
+      refute user.admin
     end
 
     test "with error not creates user" do

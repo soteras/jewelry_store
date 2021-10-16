@@ -14,7 +14,8 @@ defmodule JewelryStore.Factory do
       birthdate: ~D[2021-10-15],
       cellphone: "(11) 98999-9999",
       email: "mari@gmail.com",
-      password_hash: Bcrypt.hash_pwd_salt("abc12345")
+      password_hash: Bcrypt.hash_pwd_salt("abc12345"),
+      admin: false
     }
 
     user
