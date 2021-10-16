@@ -36,4 +36,16 @@ defmodule JewelryStore.Products.DbTest do
       refute changeset.valid?
     end
   end
+
+  describe "get_category_by_slug/1" do
+    test "returns category" do
+      category = insert(:category, name: "Promoções")
+
+      assert category.id == Db.get_category_by_slug("promocoes").id
+    end
+
+    test "returns nil" do
+      refute Db.get_category_by_slug("wrong-slug")
+    end
+  end
 end

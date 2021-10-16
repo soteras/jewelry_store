@@ -18,4 +18,7 @@ defmodule JewelryStore.Products.Db do
     |> Category.changeset(attrs)
     |> Repo.update()
   end
+
+  @spec get_category_by_slug(String.t()) :: category | nil
+  def get_category_by_slug(slug), do: Repo.get_by(Category, slug: slug)
 end
