@@ -19,7 +19,7 @@ defmodule JewelryStore.FallbackController do
 
   def call(conn, {:error, :unauthorized}) do
     conn
-    |> put_status(403)
+    |> put_status(:forbidden)
     |> put_view(ErrorView)
     |> render(:"403")
   end
