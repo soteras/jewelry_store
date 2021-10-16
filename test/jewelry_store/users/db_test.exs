@@ -49,4 +49,24 @@ defmodule JewelryStore.Users.DbTest do
       refute Db.get_user_by_id(1)
     end
   end
+
+  describe "get_user_by_email_or_cpf/1" do
+    setup do
+      user = insert(:user, email: "test@gmail.com", cpf: "72652408046")
+
+      %{user_id: user.id}
+    end
+
+    test "get user by email", %{user_id: user_id} do
+      assert user_id == Db.get_user_by_email_or_cpf("test@gmail.COM").id
+    end
+
+    test "get user by cpf", %{user_id: user_id} do
+      assert user_id == Db.get_user_by_email_or_cpf("72652408046").id
+    end
+
+    test "returns nil when user is not found" do
+      refute Db.get_user_by_email_or_cpf("1111")
+    end
+  end
 end
