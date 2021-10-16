@@ -86,6 +86,14 @@ defmodule JewelryStoreWeb do
     |> render("response.json", data: data)
   end
 
+  @spec render_response(map | list, Plug.Conn.t(), atom) :: Plug.Conn.t()
+  def render_response(data, conn, status) do
+    conn
+    |> put_status(status)
+    |> put_view(CoreView)
+    |> render("response.json", data: data)
+  end
+
   @doc """
   When used, dispatch to the appropriate controller/view/etc.
   """
