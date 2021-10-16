@@ -1,4 +1,4 @@
-defmodule JewelryStore.Users.Db do
+defmodule JewelryStore.Users.DbUser do
   alias JewelryStore.Repo
   alias JewelryStore.Users.User
 
@@ -14,19 +14,30 @@ defmodule JewelryStore.Users.Db do
     |> Repo.insert()
   end
 
-  @spec get_user_by_id(integer) :: user | nil
-  def get_user_by_id(id), do: Repo.get_by(User, id: id)
+  @spec get_user_by_id(integer) :: {:ok, user} | {:error, atom}
+  def get_user_by_id(id) do
+    case Repo.get_by(User, id: id) do
+      nil -> {:error, :not_found}
+      user -> {:ok, user}
+    end
+  end
 
-  @spec get_user_by_email_or_cpf(String.t()) :: user | nil
+  @spec get_user_by_email_or_cpf(String.t()) :: {:ok, user} | {:error, atom}
   def get_user_by_email_or_cpf(username) do
     username =
       username
       |> String.downcase()
       |> format_cpf_or_term()
 
-    user_base_query()
-    |> get_user_by_email_or_cpf(username)
-    |> Repo.one()
+    user =
+      user_base_query()
+      |> get_user_by_email_or_cpf(username)
+      |> Repo.one()
+
+    case user do
+      nil -> {:error, :not_found}
+      user -> {:ok, user}
+    end
   end
 
   defp format_cpf_or_term(username) do
