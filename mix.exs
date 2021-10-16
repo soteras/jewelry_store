@@ -45,7 +45,8 @@ defmodule JewelryStore.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:brcpfcnpj, "~> 0.2.4"},
-      {:ex_machina, "~> 2.7", only: :test}
+      {:ex_machina, "~> 2.7", only: :test},
+      {:bcrypt_elixir, "~> 2.3"}
     ]
   end
 
