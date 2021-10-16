@@ -1,7 +1,7 @@
-defmodule JewelryStore.Products.DbTest do
+defmodule JewelryStore.Products.DbCategoryTest do
   use JewelryStore.DataCase, async: true
 
-  alias JewelryStore.Products.Db
+  alias JewelryStore.Users.DbCategory, as: Db
 
   describe "create_category/1" do
     test "with success creates category" do
@@ -39,15 +39,17 @@ defmodule JewelryStore.Products.DbTest do
     end
   end
 
-  describe "get_category_by_slug/1" do
+  describe "get_category_by_id/1" do
     test "returns category" do
-      category = insert(:category, name: "Promoções")
+      category = insert(:category)
 
-      assert category.id == Db.get_category_by_slug("promocoes").id
+      assert Db.get_category_by_id(category.id) == category.id
     end
 
     test "returns nil" do
-      refute Db.get_category_by_slug("wrong-slug")
+      category = insert(:category)
+
+      refute Db.get_category_by_id(category.id)
     end
   end
 end

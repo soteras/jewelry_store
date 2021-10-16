@@ -1,6 +1,6 @@
-defmodule JewelryStore.Products.Db do
-  alias JewelryStore.Products.Category
+defmodule JewelryStore.Products.DbCategory do
   alias JewelryStore.Repo
+  alias JewelryStore.Products.Category
 
   @type category :: Category.t()
   @type changeset :: Ecto.Changeset.t()
@@ -19,6 +19,11 @@ defmodule JewelryStore.Products.Db do
     |> Repo.update()
   end
 
-  @spec get_category_by_slug(String.t()) :: category | nil
-  def get_category_by_slug(slug), do: Repo.get_by(Category, slug: slug)
+  @spec get_category_by_id(integer) :: {:ok, category} | {:error, term}
+  def get_category_by_id(id) do
+    case Repo.get_by(Category, id: id) do
+      nil -> {:error, "not found"}
+      category -> {:ok, category}
+    end
+  end
 end
