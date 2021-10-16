@@ -3,6 +3,7 @@ defmodule JewelryStore.Users do
 
   @type user :: JewelryStore.Users.User.t()
 
+  defdelegate authorize(action, user, params), to: JewelryStore.Authorization.Policies.Admin
   defdelegate create_user(attrs), to: Db
   defdelegate get_user_by_id(id), to: Db
 
