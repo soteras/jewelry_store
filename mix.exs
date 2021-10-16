@@ -47,7 +47,8 @@ defmodule JewelryStore.MixProject do
       {:brcpfcnpj, "~> 0.2.4"},
       {:ex_machina, "~> 2.7", only: :test},
       {:bcrypt_elixir, "~> 2.3"},
-      {:guardian, "~> 2.2"}
+      {:guardian, "~> 2.2"},
+      {:open_api_spex, "~> 3.10"}
     ]
   end
 
