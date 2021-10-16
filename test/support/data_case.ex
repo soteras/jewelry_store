@@ -24,6 +24,15 @@ defmodule JewelryStore.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import JewelryStore.DataCase
+      import JewelryStore.Factory
+
+      def repeat_str(str, times), do: String.duplicate(str, times)
+
+      def get_error_message(%Ecto.Changeset{errors: errors}, key) do
+        error_from_list = Keyword.get(errors, key)
+        {error_message, _} = error_from_list
+        error_message
+      end
     end
   end
 

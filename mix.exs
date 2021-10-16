@@ -7,6 +7,7 @@ defmodule JewelryStore.MixProject do
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
+      elixirc_options: [warnings_as_errors: true, ignore_module_conflict: true],
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -42,7 +43,10 @@ defmodule JewelryStore.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
+      {:brcpfcnpj, "~> 0.2.4"},
+      {:ex_machina, "~> 2.7", only: :test},
+      {:bcrypt_elixir, "~> 2.3"}
     ]
   end
 
