@@ -29,11 +29,5 @@ defmodule JewelryStore.Products.CategoryTest do
 
       assert get_error_message(changeset, :name) == "has already been taken"
     end
-
-    test "more than 25" do
-      changeset = Category.changeset(%Category{}, %{name: repeat_str("a", 26)})
-
-      assert get_error_message(changeset, :name) == "should be at most %{count} character(s)"
-    end
   end
 end
