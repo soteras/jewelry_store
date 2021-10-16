@@ -29,7 +29,8 @@ defmodule JewelryStore.Factory do
 
     %JewelryStore.Products.Category{
       name: name,
-      slug: Slug.slugify(name)
+      slug: Slug.slugify(name),
+      active: true
     }
     |> merge_attributes(attrs)
     |> evaluate_lazy_attributes()

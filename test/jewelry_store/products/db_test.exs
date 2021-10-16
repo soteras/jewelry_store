@@ -9,6 +9,7 @@ defmodule JewelryStore.Products.DbTest do
 
       assert category.name == "Anéis com Pérolas"
       assert category.slug == "aneis-com-perolas"
+      refute category.active
     end
 
     test "with error not creates category" do
@@ -22,10 +23,11 @@ defmodule JewelryStore.Products.DbTest do
     test "with success updates category" do
       category = insert(:category)
 
-      {:ok, category} = Db.update_category(category, %{name: "Anéis com Pérolas"})
+      {:ok, category} = Db.update_category(category, %{name: "Anéis com Pérolas", active: true})
 
       assert category.name == "Anéis com Pérolas"
       assert category.slug == "aneis-com-perolas"
+      assert category.active
     end
 
     test "with error not updates category" do

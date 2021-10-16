@@ -4,11 +4,12 @@ defmodule JewelryStore.Products.Category do
 
   alias JewelryStore.Types.{DowncaseString, TrimmedString}
 
-  @required_fields [:name]
+  @required_fields [:name, :active]
 
   schema "categories" do
     field :name, TrimmedString
     field :slug, DowncaseString
+    field :active, :boolean, default: false
 
     timestamps()
   end

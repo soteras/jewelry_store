@@ -5,6 +5,7 @@ defmodule JewelryStore.Repo.Migrations.CreateCategories do
     create table(:categories) do
       add :name, :string, null: false, size: 25
       add :slug, :string, null: false
+      add :active, :boolean, null: false, default: false
 
       timestamps()
     end
