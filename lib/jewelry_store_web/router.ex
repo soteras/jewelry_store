@@ -31,6 +31,8 @@ defmodule JewelryStoreWeb.Router do
 
   scope "/public/v1", JewelryStoreWeb do
     pipe_through :api
+
+    resources "/signup", Auth.SignupController, only: [:create]
   end
 
   scope "/v1", JewelryStoreWeb do
