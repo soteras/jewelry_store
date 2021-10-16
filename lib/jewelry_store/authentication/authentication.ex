@@ -21,9 +21,9 @@ defmodule JewelryStore.Authentication do
   @spec authenticate(String.t(), String.t()) :: {:ok, user, jwt_token} | {:error, term}
   def authenticate(username, password) do
     with {:ok, user} <- Users.get_user_by_email_or_cpf(username),
-      {:ok, _user} <- Bcrypt.check_pass(user, password),
-      {:ok, token} <- generate_refresh_token(user) do
-        {:ok, user, token}
+         {:ok, _user} <- Bcrypt.check_pass(user, password),
+         {:ok, token} <- generate_refresh_token(user) do
+      {:ok, user, token}
     else
       {:error, "not found"} ->
         {:error, "user not found"}
