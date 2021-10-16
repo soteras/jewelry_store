@@ -6,7 +6,7 @@ defmodule JewelryStoreWeb.Router do
   end
 
   pipeline :api_swagger do
-    plug OpenApiSpex.Plug.PutApiSpec, module: JupiterWeb.Swagger.ApiSpec
+    plug OpenApiSpex.Plug.PutApiSpec, module: JewelryStoreWeb.Swagger.ApiSpec
   end
 
   pipeline :api do
