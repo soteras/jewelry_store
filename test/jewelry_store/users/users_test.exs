@@ -15,7 +15,7 @@ defmodule JewelryStore.UsersTest do
     end
 
     test "returns an error when error" do
-      assert {:error, "not found"} == Users.get_user_by_email_or_cpf("wrong_user@gmail.com")
+      assert {:error, :not_found} == Users.get_user_by_email_or_cpf("wrong_user@gmail.com")
     end
   end
 end

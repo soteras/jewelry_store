@@ -14,11 +14,11 @@ defmodule JewelryStore.Authentication.Guardian do
 
   def resource_from_claims(%{"sub" => id}) do
     case Users.get_user_by_id(id) do
-      nil ->
-        {:error, :user_not_found}
-
-      user ->
+      {:ok, user} ->
         {:ok, user}
+
+      _ ->
+        {:error, :user_not_found}
     end
   end
 
