@@ -17,4 +17,23 @@ defmodule JewelryStore.Products.DbTest do
       refute changeset.valid?
     end
   end
+
+  describe "update_category/2" do
+    test "with success updates category" do
+      category = insert(:category)
+
+      {:ok, category} = Db.update_category(category, %{name: "Anéis com Pérolas"})
+
+      assert category.name == "Anéis com Pérolas"
+      assert category.slug == "aneis-com-perolas"
+    end
+
+    test "with error not updates category" do
+      category = insert(:category)
+
+      {:error, changeset} = Db.update_category(category, %{name: ""})
+
+      refute changeset.valid?
+    end
+  end
 end

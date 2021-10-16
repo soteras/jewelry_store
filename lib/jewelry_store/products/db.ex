@@ -11,4 +11,11 @@ defmodule JewelryStore.Products.Db do
     |> Category.changeset(attrs)
     |> Repo.insert()
   end
+
+  @spec update_category(category, map) :: {:ok, category} | {:error, changeset}
+  def update_category(category, attrs) do
+    category
+    |> Category.changeset(attrs)
+    |> Repo.update()
+  end
 end
