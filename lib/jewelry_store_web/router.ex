@@ -33,6 +33,7 @@ defmodule JewelryStoreWeb.Router do
     pipe_through :api
 
     resources "/signup", Auth.SignupController, only: [:create]
+    resources "/signin", Auth.SigninController, only: [:create]
   end
 
   scope "/v1", JewelryStoreWeb do
