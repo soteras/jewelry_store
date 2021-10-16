@@ -37,18 +37,18 @@ defmodule JewelryStore.Factory do
   end
 
   def product_factory(attrs) do
-    title =
+    name =
       Map.get(
         attrs,
-        :title,
+        :name,
         "Brinco Fixo Gatinho Esmaltado Semijoias Antialérgicas Banhadas a Ouro 22k"
       )
 
     attrs = Map.delete(attrs, :title)
 
     %JewelryStore.Products.Product{
-      title: title,
-      slug: Slug.slugify(title),
+      name: name,
+      slug: Slug.slugify(name),
       sku: "BR1915",
       price: Money.parse!("18,99"),
       short_description:
