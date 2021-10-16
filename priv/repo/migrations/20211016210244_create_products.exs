@@ -14,6 +14,7 @@ defmodule JewelryStore.Repo.Migrations.CreateProducts do
       timestamps()
     end
 
+    create index(:products, [:category_id])
     create unique_index(:products, [:title])
     create unique_index(:products, [:slug])
     create unique_index(:products, [:sku])
