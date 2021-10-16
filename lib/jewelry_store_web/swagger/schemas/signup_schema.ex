@@ -1,7 +1,7 @@
 defmodule JewelryStoreWeb.Swagger.SignupSchema do
   alias OpenApiSpex.Schema
 
-  defmodule Request do
+  defmodule SignupRequest do
     require OpenApiSpex
 
     OpenApiSpex.schema(%{
@@ -39,7 +39,7 @@ defmodule JewelryStoreWeb.Swagger.SignupSchema do
     })
   end
 
-  defmodule Response do
+  defmodule SignupResponse do
     require OpenApiSpex
 
     OpenApiSpex.schema(%{
