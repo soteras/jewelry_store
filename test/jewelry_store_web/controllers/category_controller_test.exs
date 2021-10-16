@@ -37,7 +37,7 @@ defmodule JewelryStoreWeb.CategoryControllerTest do
       %{category: category}
     end
 
-    test "returns category", %{conn: conn, category: category} do
+    test "with success", %{conn: conn, category: category} do
       response =
         conn
         |> patch("/v1/categories/#{category.id}", %{name: "Brincos com Zircônias"})
@@ -47,12 +47,20 @@ defmodule JewelryStoreWeb.CategoryControllerTest do
       assert get_data(data, "name") == "Brincos com Zircônias"
     end
 
-    test "returns an error", %{conn: conn, category: category} do
+    test "with error", %{conn: conn, category: category} do
       response =
         conn
         |> patch("/v1/categories/#{category.id}", %{name: ""})
 
       assert json_response(response, 422)
+    end
+
+    test "when not exist", %{conn: conn} do
+      response =
+        conn
+        |> patch("/v1/categories/1", %{})
+
+      assert json_response(response, 404)
     end
   end
 end
