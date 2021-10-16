@@ -2,8 +2,8 @@ defmodule JewelryStore.Users.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias JewelryStore.Types.{DowncaseString, TrimmedString}
   alias JewelryStore.Shared.Regex
+  alias JewelryStore.Types.{DowncaseString, TrimmedString}
 
   @required_fields [:name, :cpf, :gender, :cellphone, :email, :password, :password_confirmation]
   @optional_fields [:rg, :nickname, :birthdate]

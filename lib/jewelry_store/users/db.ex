@@ -1,6 +1,6 @@
 defmodule JewelryStore.Users.Db do
-  alias JewelryStore.Users.User
   alias JewelryStore.Repo
+  alias JewelryStore.Users.User
 
   @type user :: User.t()
   @type changeset :: Ecto.Changeset.t()
