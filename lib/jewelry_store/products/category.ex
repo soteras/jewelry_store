@@ -18,7 +18,6 @@ defmodule JewelryStore.Products.Category do
     struct
     |> cast(attrs, @required_fields)
     |> validate_required(@required_fields)
-    |> validate_length(:name, max: 25)
     |> unique_constraint(:name)
     |> slugify_name()
     |> unique_constraint(:slug)
