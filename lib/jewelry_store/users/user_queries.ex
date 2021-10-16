@@ -1,12 +1,12 @@
-defmodule JewelryStore.Users.Queries do
+defmodule JewelryStore.Users.UserQueries do
   import Ecto.Query
 
   alias JewelryStore.Users.User
 
   @type query :: Ecto.Query.t()
 
-  @spec user_base_query() :: query
-  def user_base_query do
+  @spec base_query() :: query
+  def base_query do
     from(user in User)
   end
 

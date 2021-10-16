@@ -1,7 +1,7 @@
-defmodule JewelryStore.Users.DbTest do
+defmodule JewelryStore.Users.DbUserTest do
   use JewelryStore.DataCase, async: true
 
-  alias JewelryStore.Users.Db
+  alias JewelryStore.Users.DbUser, as: Db
 
   @attrs %{
     name: "Antonio Carlos",
@@ -43,12 +43,13 @@ defmodule JewelryStore.Users.DbTest do
   describe "get_user_by_id/1" do
     test "returns user" do
       user = insert(:user)
+      {:ok, result} = Db.get_user_by_id(user.id)
 
-      assert user.id == Db.get_user_by_id(user.id).id
+      assert result.id == user.id
     end
 
     test "returns nil" do
-      refute Db.get_user_by_id(1)
+      assert {:error, :not_found} = Db.get_user_by_id(1)
     end
   end
 
@@ -60,15 +61,19 @@ defmodule JewelryStore.Users.DbTest do
     end
 
     test "get user by email", %{user_id: user_id} do
-      assert user_id == Db.get_user_by_email_or_cpf("test@gmail.COM").id
+      {:ok, user} = Db.get_user_by_email_or_cpf("test@gmail.COM")
+
+      assert user_id == user.id
     end
 
     test "get user by cpf", %{user_id: user_id} do
-      assert user_id == Db.get_user_by_email_or_cpf("72652408046").id
+      {:ok, user} = Db.get_user_by_email_or_cpf("72652408046")
+
+      assert user_id == user.id
     end
 
     test "returns nil when user is not found" do
-      refute Db.get_user_by_email_or_cpf("1111")
+      assert {:error, :not_found} = Db.get_user_by_email_or_cpf("1111")
     end
   end
 end

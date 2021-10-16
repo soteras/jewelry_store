@@ -17,7 +17,7 @@ defmodule JewelryStore.Authentication.Guardian do
       {:ok, user} ->
         {:ok, user}
 
-      {:error, "not found"} ->
+      _ ->
         {:error, :user_not_found}
     end
   end

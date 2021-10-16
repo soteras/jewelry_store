@@ -25,7 +25,7 @@ defmodule JewelryStore.Authentication do
          {:ok, token} <- generate_refresh_token(user) do
       {:ok, user, token}
     else
-      {:error, "not found"} ->
+      {:error, :not_found} ->
         {:error, "user not found"}
 
       {:error, "invalid password"} ->
