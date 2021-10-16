@@ -5,4 +5,5 @@ defmodule JewelryStore.Products do
   defdelegate create_category(attrs), to: DbCategory
   defdelegate update_category(category, attrs), to: DbCategory
   defdelegate get_category_by_id(id), to: DbCategory
+  defdelegate list_categories(), to: DbCategory
 end

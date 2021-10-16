@@ -51,4 +51,17 @@ defmodule JewelryStore.Products.DbCategoryTest do
       assert {:error, :not_found} = Db.get_category_by_id(99)
     end
   end
+
+  describe "list_categories/0" do
+    test "returns a list of categories" do
+      insert(:category, name: "Anéis em Ródio")
+      insert(:category, name: "Brincos com Zircônias")
+
+      assert [%{name: "Anéis em Ródio"}, %{name: "Brincos com Zircônias"}] = Db.list_categories()
+    end
+
+    test "returns an empty list" do
+      assert [] = Db.list_categories()
+    end
+  end
 end

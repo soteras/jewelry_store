@@ -5,6 +5,8 @@ defmodule JewelryStore.Products.DbCategory do
   @type category :: Category.t()
   @type changeset :: Ecto.Changeset.t()
 
+  import JewelryStore.Products.CategoryQueries
+
   @spec create_category(map) :: {:ok, category} | {:error, changeset}
   def create_category(attrs) do
     %Category{}
@@ -26,4 +28,7 @@ defmodule JewelryStore.Products.DbCategory do
       category -> {:ok, category}
     end
   end
+
+  @spec list_categories() :: [category]
+  def list_categories, do: Repo.all(base_query())
 end
