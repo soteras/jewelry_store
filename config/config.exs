@@ -22,6 +22,16 @@ config :jewelry_store, JewelryStore.Authentication.Guardian,
 
 config :gettext, :default_locale, "pt_BR"
 
+config :money,
+  default_currency: :BRL,
+  separator: ".",
+  delimiter: ",",
+  symbol: false,
+  symbol_on_right: false,
+  symbol_space: false,
+  fractional_unit: true,
+  strip_insignificant_zeros: false
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
