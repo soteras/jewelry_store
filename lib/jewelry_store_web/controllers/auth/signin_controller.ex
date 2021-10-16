@@ -31,7 +31,7 @@ defmodule JewelryStoreWeb.Auth.SigninController do
   end
 
   defp handle_response({:error, _}),
-    do: {:error, Gettext.dgettext("errors", "Email or password is invalid")}
+    do: {:error, Gettext.dgettext("errors", "Username is invalid")}
 
   defp handle_response(response), do: response
 end
