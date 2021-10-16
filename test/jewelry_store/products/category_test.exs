@@ -1,8 +1,8 @@
 defmodule JewelryStore.Products.CategoryTest do
   use JewelryStore.DataCase, async: true
 
-  alias JewelryStore.Repo
   alias JewelryStore.Products.Category
+  alias JewelryStore.Repo
 
   describe "changeset/2: valid attrs" do
     test "create changeset" do

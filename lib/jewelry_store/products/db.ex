@@ -1,6 +1,6 @@
 defmodule JewelryStore.Products.Db do
-  alias JewelryStore.Repo
   alias JewelryStore.Products.Category
+  alias JewelryStore.Repo
 
   @type category :: Category.t()
   @type changeset :: Ecto.Changeset.t()
