@@ -5,7 +5,7 @@ defmodule JewelryStore.Users.DbUser do
   @type user :: User.t()
   @type changeset :: Ecto.Changeset.t()
 
-  import JewelryStore.Users.Queries
+  import JewelryStore.Users.UserQueries
 
   @spec create_user(map) :: {:ok, user} | {:error, changeset}
   def create_user(attrs) do
@@ -30,7 +30,7 @@ defmodule JewelryStore.Users.DbUser do
       |> format_cpf_or_term()
 
     user =
-      user_base_query()
+      base_query()
       |> get_user_by_email_or_cpf(username)
       |> Repo.one()
 
