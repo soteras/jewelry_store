@@ -1,4 +1,4 @@
-defmodule JewelryStore.Swagger.ApiSpec do
+defmodule JewelryStoreWeb.Swagger.ApiSpec do
   alias OpenApiSpex.{Components, Info, OpenApi, Paths, SecurityScheme, Server}
   alias JewelryStoreWeb.{Endpoint, Router}
 

@@ -1,4 +1,4 @@
-defmodule JewelryStore.Swagger.Security do
+defmodule JewelryStoreWeb.Swagger.Security do
   def public do
     []
   end
