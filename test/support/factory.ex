@@ -35,4 +35,29 @@ defmodule JewelryStore.Factory do
     |> merge_attributes(attrs)
     |> evaluate_lazy_attributes()
   end
+
+  def product_factory(attrs) do
+    title =
+      Map.get(
+        attrs,
+        :title,
+        "Brinco Fixo Gatinho Esmaltado Semijoias Antialérgicas Banhadas a Ouro 22k"
+      )
+
+    attrs = Map.delete(attrs, :title)
+
+    %JewelryStore.Products.Product{
+      title: title,
+      slug: Slug.slugify(title),
+      sku: "BR1915",
+      price: Money.parse!("18,99"),
+      short_description:
+        "Brinco fixo gatinho esmaltado, semijoia antialérgica banhada a ouro 22k.",
+      description:
+        "Brinco fixo gatinho esmaltado, esmalte de cor preto. Tamanho aproximado: 1,5 cm de altura e 1,5 cm de largura. Semijoia antialérgica banhada a ouro 22k. Direto de fábrica em Limeira.",
+      category: build(:category)
+    }
+    |> merge_attributes(attrs)
+    |> evaluate_lazy_attributes()
+  end
 end
