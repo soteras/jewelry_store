@@ -22,4 +22,16 @@ defmodule JewelryStore.Factory do
     |> merge_attributes(attrs)
     |> evaluate_lazy_attributes()
   end
+
+  def category_factory(attrs) do
+    name = Map.get(attrs, :name, "Aço Inox")
+    attrs = Map.delete(attrs, :name)
+
+    %JewelryStore.Products.Category{
+      name: name,
+      slug: Slug.slugify(name)
+    }
+    |> merge_attributes(attrs)
+    |> evaluate_lazy_attributes()
+  end
 end
