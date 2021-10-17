@@ -35,7 +35,7 @@ defmodule JewelryStoreWeb.Router do
     resources "/signup", Auth.SignupController, only: [:create]
     resources "/signin", Auth.SigninController, only: [:create]
 
-    if Mix.env == :dev do
+    if Mix.env() == :dev do
       forward "/graphiql", Plug.PublicGraphiql, schema: PublicSchema
     end
 
@@ -47,7 +47,7 @@ defmodule JewelryStoreWeb.Router do
 
     resources "/categories", CategoryController, only: [:create, :update]
 
-    if Mix.env == :dev do
+    if Mix.env() == :dev do
       forward "/graphiql", Plug.Graphiql, schema: Schema
     end
 
