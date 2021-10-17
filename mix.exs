@@ -52,7 +52,8 @@ defmodule JewelryStore.MixProject do
       {:bodyguard, "~> 2.4"},
       {:slugify, "~> 1.3"},
       {:money, "~> 1.9"},
-      {:absinthe, "~> 1.6"}
+      {:absinthe, "~> 1.6"},
+      {:absinthe_plug, "~> 1.5"}
     ]
   end
 
