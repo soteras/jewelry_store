@@ -18,7 +18,7 @@ defmodule JewelryStoreWeb.Auth.SignupControllerTest do
 
       response =
         conn
-        |> post("/public/v1/signup", params)
+        |> post("/public/api/signup", params)
 
       assert data = json_response(response, 201)
 
@@ -34,7 +34,7 @@ defmodule JewelryStoreWeb.Auth.SignupControllerTest do
 
       response =
         conn
-        |> post("/public/v1/signup", params)
+        |> post("/public/api/signup", params)
 
       assert json_response(response, 422)
     end

@@ -29,16 +29,28 @@ defmodule JewelryStoreWeb.Router do
     get "/swaggerui", OpenApiSpex.Plug.SwaggerUI, path: "/v1/openapi"
   end
 
-  scope "/public/v1", JewelryStoreWeb do
+  scope "/public/api", JewelryStoreWeb do
     pipe_through :api
 
     resources "/signup", Auth.SignupController, only: [:create]
     resources "/signin", Auth.SigninController, only: [:create]
+
+    if Mix.env() == :dev do
+      forward "/graphiql", Plug.PublicGraphiql, schema: PublicSchema
+    end
+
+    forward "/", Plug.PublicAbsinthe, schema: PublicSchema
   end
 
-  scope "/v1", JewelryStoreWeb do
-    pipe_through [:auth, :api]
+  scope "/api", JewelryStoreWeb do
+    pipe_through [:api, :auth]
 
     resources "/categories", CategoryController, only: [:create, :update]
+
+    if Mix.env() == :dev do
+      forward "/graphiql", Plug.Graphiql, schema: Schema
+    end
+
+    forward "/", Plug.Absinthe, schema: Schema
   end
 end

@@ -12,7 +12,7 @@ defmodule JewelryStoreWeb.CategoryControllerTest do
     test "returns category", %{conn: conn} do
       response =
         conn
-        |> post("/v1/categories", %{name: "Brincos Ear cuff, Jaquet e Hook", active: true})
+        |> post("/api/categories", %{name: "Brincos Ear cuff, Jaquet e Hook", active: true})
 
       assert data = json_response(response, 201)
 
@@ -24,7 +24,7 @@ defmodule JewelryStoreWeb.CategoryControllerTest do
     test "returns an error", %{conn: conn} do
       response =
         conn
-        |> post("/v1/categories", %{name: ""})
+        |> post("/api/categories", %{name: ""})
 
       assert json_response(response, 422)
     end
@@ -40,7 +40,7 @@ defmodule JewelryStoreWeb.CategoryControllerTest do
     test "with success", %{conn: conn, category: category} do
       response =
         conn
-        |> patch("/v1/categories/#{category.id}", %{name: "Brincos com Zircônias"})
+        |> patch("/api/categories/#{category.id}", %{name: "Brincos com Zircônias"})
 
       assert data = json_response(response, 200)
 
@@ -50,7 +50,7 @@ defmodule JewelryStoreWeb.CategoryControllerTest do
     test "with error", %{conn: conn, category: category} do
       response =
         conn
-        |> patch("/v1/categories/#{category.id}", %{name: ""})
+        |> patch("/api/categories/#{category.id}", %{name: ""})
 
       assert json_response(response, 422)
     end
@@ -58,7 +58,7 @@ defmodule JewelryStoreWeb.CategoryControllerTest do
     test "when not exist", %{conn: conn} do
       response =
         conn
-        |> patch("/v1/categories/1", %{})
+        |> patch("/api/categories/1", %{})
 
       assert json_response(response, 404)
     end
