@@ -51,7 +51,8 @@ defmodule JewelryStore.MixProject do
       {:open_api_spex, "~> 3.10"},
       {:bodyguard, "~> 2.4"},
       {:slugify, "~> 1.3"},
-      {:money, "~> 1.9"}
+      {:money, "~> 1.9"},
+      {:absinthe, "~> 1.6"}
     ]
   end
 
