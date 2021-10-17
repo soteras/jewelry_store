@@ -13,7 +13,7 @@ defmodule JewelryStoreWeb.Auth.SigninControllerTest do
 
       response =
         conn
-        |> post("/public/v1/signin", params)
+        |> post("/public/api/signin", params)
 
       assert data = json_response(response, 200)
 
@@ -27,7 +27,7 @@ defmodule JewelryStoreWeb.Auth.SigninControllerTest do
 
       response =
         conn
-        |> post("/public/v1/signin", params)
+        |> post("/public/api/signin", params)
 
       assert data = json_response(response, 200)
 
@@ -41,7 +41,7 @@ defmodule JewelryStoreWeb.Auth.SigninControllerTest do
 
       response =
         conn
-        |> post("/public/v1/signin", params)
+        |> post("/public/api/signin", params)
 
       assert data = json_response(response, 422)
 
@@ -53,7 +53,7 @@ defmodule JewelryStoreWeb.Auth.SigninControllerTest do
 
       response =
         conn
-        |> post("/public/v1/signin", params)
+        |> post("/public/api/signin", params)
 
       assert data = json_response(response, 422)
 

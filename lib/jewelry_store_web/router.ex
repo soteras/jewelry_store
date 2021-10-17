@@ -43,7 +43,7 @@ defmodule JewelryStoreWeb.Router do
   end
 
   scope "/api", JewelryStoreWeb do
-    pipe_through :api
+    pipe_through [:api, :auth]
 
     resources "/categories", CategoryController, only: [:create, :update]
 
