@@ -13,28 +13,28 @@ defmodule JewelryStoreWeb.Router do
     plug JewelryStore.Authentication.Pipeline
   end
 
-  scope "/public/api", JewelryStoreWeb do
+  scope "/public/api" do
     pipe_through :api
 
-    resources "/signup", Auth.SignupController, only: [:create]
-    resources "/signin", Auth.SigninController, only: [:create]
+    resources "/signin", JewelryStoreWeb.Auth.SigninController, only: [:create]
 
     if Mix.env() == :dev do
-      forward "/graphiql", Plug.PublicGraphiql, schema: PublicSchema
+      forward "/graphiql", JewelryStoreWeb.Plug.PublicGraphiql,
+        schema: JewelryStoreWeb.PublicSchema
     end
 
-    forward "/", Plug.PublicAbsinthe, schema: PublicSchema
+    forward "/", JewelryStoreWeb.Plug.PublicAbsinthe, schema: JewelryStoreWeb.PublicSchema
   end
 
-  scope "/api", JewelryStoreWeb do
+  scope "/api" do
     pipe_through [:api, :auth]
 
-    resources "/categories", CategoryController, only: [:create, :update]
+    resources "/categories", JewelryStoreWeb.CategoryController, only: [:create, :update]
 
     if Mix.env() == :dev do
-      forward "/graphiql", Plug.Graphiql, schema: Schema
+      forward "/graphiql", JewelryStoreWeb.Plug.Graphiql, schema: JewelryStoreWeb.Schema
     end
 
-    forward "/", Plug.Absinthe, schema: Schema
+    forward "/", JewelryStoreWeb.Plug.Absinthe, schema: JewelryStoreWeb.Schema
   end
 end

@@ -14,7 +14,8 @@ defmodule JewelryStoreWeb.ConnCase do
       @endpoint JewelryStoreWeb.Endpoint
 
       def get_data(data, key), do: data["data"][key]
-      def get_errors(data), do: data["error"]["details"]
+      def get_data(data, resource, key), do: data["data"][resource][key]
+      def get_errors(data), do: data["errors"]
 
       def login(conn, user) do
         case Authentication.generate_refresh_token(user) do
