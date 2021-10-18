@@ -48,7 +48,6 @@ defmodule JewelryStore.MixProject do
       {:ex_machina, "~> 2.7", only: :test},
       {:bcrypt_elixir, "~> 2.3"},
       {:guardian, "~> 2.2"},
-      {:open_api_spex, "~> 3.10"},
       {:bodyguard, "~> 2.4"},
       {:slugify, "~> 1.3"},
       {:money, "~> 1.9"},
