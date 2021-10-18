@@ -1,7 +1,7 @@
 defmodule JewelryStoreWeb.Schema.Signup.Type do
   use Absinthe.Schema.Notation
 
-  import_types Absinthe.Type.Custom
+  import_types(Absinthe.Type.Custom)
 
   object :session do
     field :name, :string
@@ -10,15 +10,15 @@ defmodule JewelryStoreWeb.Schema.Signup.Type do
   end
 
   enum :gender do
-    description "Tipos de gêneros"
+    description("Tipos de gêneros")
 
-    value :female, description: "Feminino"
-    value :male, description: "Masculino"
-    value :other, description: "Outro"
+    value(:female, description: "Feminino")
+    value(:male, description: "Masculino")
+    value(:other, description: "Outro")
   end
 
   input_object :signup_input do
-    description "Campos da criação do usuário"
+    description("Campos da criação do usuário")
 
     field :name, non_null(:string), description: "Nome"
     field :cpf, non_null(:string), description: "CPF"
