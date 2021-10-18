@@ -2,7 +2,6 @@ defmodule JewelryStoreWeb.Schema.Signup.Type do
   use Absinthe.Schema.Notation
 
   import_types(Absinthe.Type.Custom)
-  import_types(JewelryStoreWeb.Schema.Shared.Type)
 
   enum :gender do
     description("Tipos de gêneros")

@@ -3,6 +3,7 @@ defmodule JewelryStoreWeb.PublicSchema do
 
   alias JewelryStoreWeb.Middleware.ErrorHandler
 
+  import_types(JewelryStoreWeb.Schema.Shared.Type)
   import_types(JewelryStoreWeb.Schema.Signup.Mutation)
   import_types(JewelryStoreWeb.Schema.Signin.Mutation)
 
