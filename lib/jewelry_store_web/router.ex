@@ -24,7 +24,7 @@ defmodule JewelryStoreWeb.Router do
         schema: JewelryStoreWeb.PublicSchema
     end
 
-    forward "/", JewelryStoreWeb.Plug.PublicGraphiql, schema: JewelryStoreWeb.PublicSchema
+    forward "/", JewelryStoreWeb.Plug.PublicAbsinthe, schema: JewelryStoreWeb.PublicSchema
   end
 
   scope "/api" do
