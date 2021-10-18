@@ -4,6 +4,7 @@ defmodule JewelryStoreWeb.PublicSchema do
   import_types(JewelryStoreWeb.Schema.Signup.Mutation)
 
   query do
+    field :wip, :string
   end
 
   mutation do
