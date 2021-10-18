@@ -12,9 +12,9 @@ defmodule JewelryStoreWeb.Schema.Signup.Type do
   enum :gender do
     description("Tipos de gêneros")
 
-    value(:female, description: "Feminino")
-    value(:male, description: "Masculino")
-    value(:other, description: "Outro")
+    value(:female, as: "female", description: "Feminino")
+    value(:male, as: "male", description: "Masculino")
+    value(:other, as: "other", description: "Outro")
   end
 
   input_object :signup_input do
