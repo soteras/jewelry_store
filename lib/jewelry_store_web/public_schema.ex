@@ -4,6 +4,7 @@ defmodule JewelryStoreWeb.PublicSchema do
   alias JewelryStoreWeb.Middleware.ErrorHandler
 
   import_types(JewelryStoreWeb.Schema.Signup.Mutation)
+  import_types(JewelryStoreWeb.Schema.Signin.Mutation)
 
   query do
     field :wip, :string
@@ -11,6 +12,7 @@ defmodule JewelryStoreWeb.PublicSchema do
 
   mutation do
     import_fields(:signup_mutation)
+    import_fields(:signin_mutation)
   end
 
   def middleware(middleware, _field, %{identifier: type}) when type in [:query, :mutation],

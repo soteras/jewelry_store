@@ -11,7 +11,7 @@ defmodule JewelryStoreWeb.Utils.Error do
     end)
   end
 
-  def render(error) do
-    %{field: "", message: error}
+  def handle(error) do
+    [%{message: error}]
   end
 end
