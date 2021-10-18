@@ -7,7 +7,7 @@ defmodule JewelryStoreWeb.Utils.Error do
     changeset
     |> Ecto.Changeset.traverse_errors(&ErrorHelpers.translate_error/1)
     |> Enum.map(fn {k, v} ->
-      %{field: k, message: v}
+      %{field: k, message: List.first(v)}
     end)
   end
 

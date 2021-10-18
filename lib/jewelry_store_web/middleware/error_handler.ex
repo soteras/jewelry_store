@@ -5,11 +5,15 @@ defmodule JewelryStoreWeb.Middleware.ErrorHandler do
 
   @impl true
   def call(resolution, _config) do
-    errors =
-      resolution.errors
-      |> List.first()
-      |> Error.handle()
+    if length(resolution.errors) > 0 do
+      errors =
+        resolution.errors
+        |> List.first()
+        |> Error.handle()
 
-    %{resolution | errors: errors}
+      %{resolution | errors: errors}
+    else
+      resolution
+    end
   end
 end
