@@ -16,8 +16,6 @@ defmodule JewelryStoreWeb.Router do
   scope "/public/api" do
     pipe_through :api
 
-    resources "/signin", JewelryStoreWeb.Auth.SigninController, only: [:create]
-
     if Mix.env() == :dev do
       forward "/graphiql", JewelryStoreWeb.Plug.PublicGraphiql,
         schema: JewelryStoreWeb.PublicSchema
