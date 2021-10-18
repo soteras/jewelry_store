@@ -29,10 +29,6 @@ defmodule JewelryStoreWeb.Router do
 
     resources "/categories", JewelryStoreWeb.CategoryController, only: [:create, :update]
 
-    if Mix.env() == :dev do
-      forward "/graphiql", JewelryStoreWeb.Plug.Graphiql, schema: JewelryStoreWeb.Schema
-    end
-
     forward "/", JewelryStoreWeb.Plug.Absinthe, schema: JewelryStoreWeb.Schema
   end
 end
