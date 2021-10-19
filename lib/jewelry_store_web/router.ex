@@ -22,9 +22,6 @@ defmodule JewelryStoreWeb.Router do
 
     if Mix.env() == :dev do
       forward "/public", JewelryStoreWeb.Plug.PublicGraphiql, schema: JewelryStoreWeb.PublicSchema
-    end
-
-    if Mix.env() == :dev do
       forward "/", JewelryStoreWeb.Plug.Graphiql, schema: JewelryStoreWeb.Schema
     end
   end
