@@ -32,4 +32,11 @@ defmodule JewelryStore.Authentication do
         {:error, "password not valid"}
     end
   end
+
+  @spec current_resource(jwt_token) :: {:ok, user} | {:error, atom}
+  def current_resource(token) do
+    with {:ok, claims} <- Guardian.decode_and_verify(token) do
+      Guardian.resource_from_claims(claims)
+    end
+  end
 end

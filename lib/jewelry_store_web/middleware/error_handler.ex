@@ -1,7 +1,7 @@
 defmodule JewelryStoreWeb.Middleware.ErrorHandler do
   @behaviour Absinthe.Middleware
 
-  alias JewelryStoreWeb.Utils.Error
+  alias JewelryStoreWeb.ErrorHelpers
 
   @impl true
   def call(resolution, _config) do
@@ -9,7 +9,7 @@ defmodule JewelryStoreWeb.Middleware.ErrorHandler do
       errors =
         resolution.errors
         |> List.first()
-        |> Error.handle()
+        |> ErrorHelpers.handle()
 
       %{resolution | errors: errors}
     else

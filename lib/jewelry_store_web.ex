@@ -1,9 +1,4 @@
 defmodule JewelryStoreWeb do
-  alias JewelryStoreWeb.JewelryStoreView
-
-  import Phoenix.Controller, only: [put_view: 2, render: 3]
-  import Plug.Conn
-
   def controller do
     quote do
       use Phoenix.Controller, namespace: JewelryStoreWeb
@@ -12,8 +7,6 @@ defmodule JewelryStoreWeb do
 
       import Plug.Conn
       import JewelryStoreWeb.Gettext
-      import JewelryStoreWeb, only: [render_response: 2, render_response: 3]
-      import Guardian.Plug, only: [current_resource: 1, current_resource: 2]
     end
   end
 
@@ -57,41 +50,6 @@ defmodule JewelryStoreWeb do
       import JewelryStoreWeb.Gettext
       alias JewelryStoreWeb.Router.Helpers, as: Routes
     end
-  end
-
-  @spec render_response(nil, Plug.Conn.t()) :: nil
-  def render_response(nil, _conn), do: nil
-
-  @spec render_response(map, Plug.Conn.t()) :: Plug.Conn.t()
-  def render_response(%{data: data, pagination: pagination}, conn) do
-    conn
-    |> put_status(:ok)
-    |> put_view(JewelryStoreView)
-    |> render("paginated.json", %{data: data, pagination: pagination})
-  end
-
-  @spec render_response(atom, Plug.Conn.t()) :: Plug.Conn.t()
-  def render_response(:empty, conn) do
-    conn
-    |> put_status(:ok)
-    |> put_view(JewelryStoreView)
-    |> render("response.json", data: :empty)
-  end
-
-  @spec render_response(map | list, Plug.Conn.t()) :: Plug.Conn.t()
-  def render_response(data, conn) do
-    conn
-    |> put_status(:ok)
-    |> put_view(JewelryStoreView)
-    |> render("response.json", data: data)
-  end
-
-  @spec render_response(map | list, Plug.Conn.t(), atom) :: Plug.Conn.t()
-  def render_response(data, conn, status) do
-    conn
-    |> put_status(status)
-    |> put_view(JewelryStoreView)
-    |> render("response.json", data: data)
   end
 
   @doc """
