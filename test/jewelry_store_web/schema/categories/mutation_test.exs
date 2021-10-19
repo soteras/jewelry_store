@@ -31,6 +31,7 @@ defmodule JewelryStoreWeb.Schema.Categories.ResolverTest do
       assert data = json_response(response, 200)
 
       assert get_data(data, "createCategory", "name") == "Brincos em aço Inox"
+      assert get_data(data, "createCategory", "slug") == "brincos-em-aco-inox"
       assert get_data(data, "createCategory", "active")
     end
 
