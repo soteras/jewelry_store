@@ -1,0 +1,350 @@
+{
+  "key": "graphiql",
+  "lastId": 5,
+  "tabIds": [
+    "tab1",
+    "tab3",
+    "tab5"
+  ],
+  "closedTabs": [
+    {
+      "id": "tab4",
+      "name": "Query 3",
+      "url": "http://localhost:4000/public/api/graphiql",
+      "websocketUrl": "",
+      "proxy": false,
+      "headers": [],
+      "collapsed": false,
+      "maxHistory": 20,
+      "history": [],
+      "graphiql:query": "",
+      "graphiql:variables": "",
+      "graphiql:editorFlex": 1,
+      "graphiql:variableEditorHeight": 200,
+      "graphiql:docExplorerWidth": 350
+    },
+    {
+      "id": "tab2",
+      "name": "Query 2",
+      "url": "http://localhost:4000/public/api/graphiql",
+      "websocketUrl": "",
+      "proxy": false,
+      "headers": [],
+      "collapsed": false,
+      "maxHistory": 20,
+      "history": [],
+      "graphiql:query": "",
+      "graphiql:variables": "",
+      "graphiql:editorFlex": 1,
+      "graphiql:variableEditorHeight": 200,
+      "graphiql:docExplorerWidth": 350
+    }
+  ],
+  "defaultUrl": "http://localhost:4000/public/api/graphiql",
+  "defaultWebsocketUrl": "",
+  "defaultQuery": "",
+  "defaultVariables": "",
+  "defaultProxy": false,
+  "defaultHeaders": [],
+  "usedUrls": [
+    "http://localhost:4000/public/api",
+    "http://localhost:4000/api/",
+    "http://localhost:4000//api/graphiql/public",
+    "http://localhost:4000//api/graphiql/",
+    "http://localhost:4000/api/public/graphiql",
+    "http://localhost:4000/api//public/graphiql",
+    "http://localhost:4000/api",
+    "http://localhost:4000/api/graphiql/",
+    "http://localhost:4000//api/graphiql",
+    "http://localhost:4000/api/graphiql",
+    "http://localhost:4000/public/api/graphiql"
+  ],
+  "recentHeaders": [
+    {
+      "name": "Authorization",
+      "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJqZXdlbHJ5X3N0b3JlIiwiZXhwIjoxNjM1MjExMjM5LCJpYXQiOjE2MzQ2MDY0MzksImlzcyI6Impld2Vscnlfc3RvcmUiLCJqdGkiOiI3OWRmYjc5Zi1iZmEyLTQ3NWUtYTEwYy05ZWIyYmUzZTM0N2EiLCJuYmYiOjE2MzQ2MDY0MzgsInN1YiI6IjIiLCJ0eXAiOiJyZWZyZXNoIn0.2__NONr9kP3MMlsUmvX9ilHyBJXwd4IqpvljRaugkIkdNC9BVzzgMaS5fvPLNZ5sGdf990kp1SE4wvasyeWaHg"
+    },
+    {
+      "name": "authorization",
+      "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJqZXdlbHJ5X3N0b3JlIiwiZXhwIjoxNjM1MjExMjM5LCJpYXQiOjE2MzQ2MDY0MzksImlzcyI6Impld2Vscnlfc3RvcmUiLCJqdGkiOiI3OWRmYjc5Zi1iZmEyLTQ3NWUtYTEwYy05ZWIyYmUzZTM0N2EiLCJuYmYiOjE2MzQ2MDY0MzgsInN1YiI6IjIiLCJ0eXAiOiJyZWZyZXNoIn0.2__NONr9kP3MMlsUmvX9ilHyBJXwd4IqpvljRaugkIkdNC9BVzzgMaS5fvPLNZ5sGdf990kp1SE4wvasyeWaHg"
+    }
+  ],
+  "maxTabHistory": 20,
+  "maxUrlHistory": 20,
+  "maxHistory": 20,
+  "savedQueries": [
+    {
+      "query": "mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\n    name\n    nickname\n    token\n  }\n}",
+      "variables": "{\n  \"name\": \"Carlos Henrique\",\n  \"cpf\": \"40986784893\",\n  \"email\": \"carlosoteras@gmail.com\",\n  \"gender\": \"MALE\",\n  \"password\": \"abc12345\",\n  \"passwordConfirmation\": \"abc12345\",\n  \"cellphone\": \"(11)98601-6442\"\n}"
+    }
+  ],
+  "activeId": "tab5",
+  "tabs": [
+    {
+      "id": "tab1",
+      "name": "Signup",
+      "url": "http://localhost:4000/public/api",
+      "websocketUrl": "",
+      "proxy": false,
+      "headers": [],
+      "collapsed": false,
+      "maxHistory": 20,
+      "history": [
+        {
+          "query": "mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "name": "Carlos Henrique",
+            "cpf": "40986784893",
+            "email": "carlosoteras@gmail.com",
+            "gender": "MALE",
+            "password": "abc12345",
+            "passwordConfirmation": "abc12345",
+            "cellphone": "(11)98601-6442"
+          }
+        },
+        {
+          "query": "mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "name": "Carlos Henrique",
+            "cpf": "40986784893",
+            "email": "carlosoteras@gmail.com",
+            "gender": "MALE",
+            "password": "abc12345",
+            "passwordConfirmation": "abc12345",
+            "cellphone": "(11)98601-6442"
+          }
+        },
+        {
+          "query": "mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "name": "Carlos Henrique",
+            "cpf": "40986784893",
+            "email": "carlosoteras@gmail.com",
+            "gender": "MALE",
+            "password": "abc12345",
+            "passwordConfirmation": "abc12345",
+            "cellphone": "(11)98601-6442"
+          }
+        },
+        {
+          "query": "mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "name": "Carlos Henrique",
+            "cpf": "40986784893",
+            "email": "carlosoteras@gmail.com",
+            "gender": "MALE",
+            "password": "abc12345",
+            "passwordConfirmation": "abc12345",
+            "cellphone": "(11)98601-6442"
+          }
+        },
+        {
+          "query": "mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "name": "Carlos Henrique",
+            "cpf": "40986784893",
+            "email": "carlosoteras@gmail.com",
+            "gender": "MALE",
+            "password": "abc12345",
+            "passwordConfirmation": "abc12345",
+            "cellphone": "(11)98601-6442"
+          }
+        },
+        {
+          "query": "mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "name": "Carlos Henrique",
+            "cpf": "40986784893",
+            "email": "carlosoteras@gmail.com",
+            "gender": "MALE",
+            "password": "abc12345",
+            "passwordConfirmation": "abc12345",
+            "cellphone": "(11)98601-6442"
+          }
+        },
+        {
+          "query": "mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "name": "Carlos Henrique",
+            "cpf": "40986784893",
+            "email": "carlosoteras@gmail.com",
+            "gender": "MALE",
+            "password": "abc12345",
+            "passwordConfirmation": "abc12345"
+          }
+        },
+        {
+          "query": "mutation userInput($name: String!) {\n  createUser(input: {name: $name, cellphone: \"(11) 98601-6442\", cpf: \"40986784893\", email: \"carlosoteras@gmail.com\", gender: MALE, password: \"abc12345\", passwordConfirmation: \"abc12345\"}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "name": "Carlos Henrique"
+          }
+        },
+        {
+          "query": "mutation {\n  createUser(input: {name: \"\", cellphone: \"(11) 98601-6442\", cpf: \"40986784893\", email: \"carlosoteras@gmail.com\", gender: MALE, password: \"abc12345\", passwordConfirmation: \"abc12345\"}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": null
+        },
+        {
+          "query": "mutation {\n  createUser(input: {name: \"Carlos Henrique\", cellphone: \"(11) 98601-6442\", cpf: \"40986784893\", email: \"carlosoteras@gmail.com\", gender: MALE, password: \"abc12345\", passwordConfirmation: \"abc12345\"}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": null
+        },
+        {
+          "query": "mutation {\n  createUser(input: {name: \"Carlos Henrique\"}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": null
+        },
+        {
+          "query": "mutation {\n  createUser(input: {name: \"Carlos Henrique\"}) {\n    name\n  }\n}",
+          "variables": null
+        }
+      ],
+      "graphiql:query": "mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\n    name\n    nickname\n    token\n  }\n}",
+      "graphiql:variables": "{\n  \"name\": \"Carlos Henrique\",\n  \"cpf\": \"40986784893\",\n  \"email\": \"carlosoteras@gmail.com\",\n  \"gender\": \"MALE\",\n  \"password\": \"abc12345\",\n  \"passwordConfirmation\": \"abc12345\",\n  \"cellphone\": \"(11)98601-6442\"\n}",
+      "graphiql:queries": "{\"queries\":[{\"query\":\"mutation {\\n  createUser(input: {name: \\\"Carlos Henrique\\\"}) {\\n    name\\n  }\\n}\"},{\"query\":\"mutation {\\n  createUser(input: {name: \\\"Carlos Henrique\\\"}) {\\n    name\\n    nickname\\n    token\\n  }\\n}\"},{\"query\":\"mutation {\\n  createUser(input: {name: \\\"Carlos Henrique\\\", cellphone: \\\"(11) 98601-6442\\\", cpf: \\\"40986784893\\\", email: \\\"carlosoteras@gmail.com\\\", gender: MALE, password: \\\"abc12345\\\", passwordConfirmation: \\\"abc12345\\\"}) {\\n    name\\n    nickname\\n    token\\n  }\\n}\"},{\"query\":\"mutation {\\n  createUser(input: {name: \\\"\\\", cellphone: \\\"(11) 98601-6442\\\", cpf: \\\"40986784893\\\", email: \\\"carlosoteras@gmail.com\\\", gender: MALE, password: \\\"abc12345\\\", passwordConfirmation: \\\"abc12345\\\"}) {\\n    name\\n    nickname\\n    token\\n  }\\n}\"},{\"query\":\"mutation userInput($name: String!) {\\n  createUser(input: {name: $name, cellphone: \\\"(11) 98601-6442\\\", cpf: \\\"40986784893\\\", email: \\\"carlosoteras@gmail.com\\\", gender: MALE, password: \\\"abc12345\\\", passwordConfirmation: \\\"abc12345\\\"}) {\\n    name\\n    nickname\\n    token\\n  }\\n}\",\"variables\":\"{\\n  \\\"name\\\": \\\"Carlos Henrique\\\"\\n}\",\"operationName\":\"userInput\"},{\"query\":\"mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\\n    name\\n    nickname\\n    token\\n  }\\n}\",\"variables\":\"{\\n  \\\"name\\\": \\\"Carlos Henrique\\\",\\n  \\\"cpf\\\": \\\"40986784893\\\",\\n  \\\"email\\\": \\\"carlosoteras@gmail.com\\\",\\n  \\\"gender\\\": \\\"MALE\\\",\\n  \\\"password\\\": \\\"abc12345\\\",\\n  \\\"passwordConfirmation\\\": \\\"abc12345\\\"\\n}\",\"operationName\":\"userInput\"},{\"query\":\"mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\\n    name\\n    nickname\\n    token\\n  }\\n}\",\"variables\":\"{\\n  \\\"name\\\": \\\"Carlos Henrique\\\",\\n  \\\"cpf\\\": \\\"40986784893\\\",\\n  \\\"email\\\": \\\"carlosoteras@gmail.com\\\",\\n  \\\"gender\\\": \\\"MALE\\\",\\n  \\\"password\\\": \\\"abc12345\\\",\\n  \\\"passwordConfirmation\\\": \\\"abc12345\\\",\\n  \\\"cellphone\\\": \\\"(11)98601-6442\\\"\\n}\",\"operationName\":\"userInput\"},{\"query\":\"mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\\n    name\\n    nickname\\n    token\\n  }\\n}\",\"variables\":\"{\\n  \\\"name\\\": \\\"Carlos Henrique\\\",\\n  \\\"cpf\\\": \\\"40986784893\\\",\\n  \\\"email\\\": \\\"carlosoteras@gmail.com\\\",\\n  \\\"gender\\\": MALE,\\n  \\\"password\\\": \\\"abc12345\\\",\\n  \\\"passwordConfirmation\\\": \\\"abc12345\\\",\\n  \\\"cellphone\\\": \\\"(11)98601-6442\\\"\\n}\",\"operationName\":\"userInput\"},{\"query\":\"mutation userInput($name: String!, $cpf: String!, $email: String!, $gender: Gender!, $password: String!, $passwordConfirmation: String!, $cellphone: String!) {\\n  createUser(input: {name: $name, cpf: $cpf, email: $email, gender: $gender, password: $password, passwordConfirmation: $passwordConfirmation, cellphone: $cellphone}) {\\n    name\\n    nickname\\n    token\\n  }\\n}\",\"variables\":\"{\\n  \\\"name\\\": \\\"Carlos Henrique\\\",\\n  \\\"cpf\\\": \\\"40986784893\\\",\\n  \\\"email\\\": \\\"carlosoteras@gmail.com\\\",\\n  \\\"gender\\\": \\\"MALE\\\",\\n  \\\"password\\\": \\\"abc12345\\\",\\n  \\\"passwordConfirmation\\\": \\\"abc12345\\\",\\n  \\\"cellphone\\\": \\\"(11)98601-6442\\\"\\n}\",\"operationName\":\"userInput\"}]}",
+      "graphiql:docExplorerOpen": true,
+      "graphiql:docExplorerWidth": 350,
+      "graphiql:variableEditorHeight": 200,
+      "graphiql:editorFlex": 1,
+      "graphiql:operationName": "userInput"
+    },
+    {
+      "id": "tab3",
+      "name": "Signin",
+      "url": "http://localhost:4000/public/api",
+      "websocketUrl": "",
+      "proxy": false,
+      "headers": [],
+      "collapsed": false,
+      "maxHistory": 20,
+      "history": [
+        {
+          "query": "mutation signinInput($username: String!, $password: String!) {\n  signin(input: {username: $username, password: $password}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "username": "carlosoteras@gmail.com",
+            "password": "abc12345"
+          }
+        },
+        {
+          "query": "mutation signinInput($username: String!, $password: String!) {\n  signin(input: {username: $username, password: $password}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "username": "carlosoteras@gmail.com",
+            "password": "abc12345"
+          }
+        },
+        {
+          "query": "mutation signinInput($username: String!, $password: String!) {\n  signin(input: {username: $username, password: $password}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "username": "carlosoteras@gmail.com",
+            "password": "abc12345"
+          }
+        },
+        {
+          "query": "mutation signinInput($username: String!, $password: String!) {\n  signin(input: {username: $username, password: $password}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "username": "carlosoteras@gmail.com",
+            "password": "abc12345"
+          }
+        },
+        {
+          "query": "mutation signinInput($username: String!, $password: String!) {\n  signin(input: {username: $username, password: $password}) {\n    name\n    nickname\n    token\n  }\n}",
+          "variables": {
+            "username": "carlosoteras@gmail.com",
+            "password": "abc12345"
+          }
+        }
+      ],
+      "graphiql:query": "mutation signinInput($username: String!, $password: String!) {\n  signin(input: {username: $username, password: $password}) {\n    name\n    nickname\n    token\n  }\n}",
+      "graphiql:variables": "{\n  \"username\": \"carlosoteras@gmail.com\",\n  \"password\": \"abc12345\"\n}",
+      "graphiql:queries": "{\"queries\":[{\"query\":\"mutation signinInput($username: String!, $password: String!) {\\n  signin(input: {username: $username, password: $password}) {\\n    name\\n    nickname\\n    token\\n  }\\n}\",\"variables\":\"{\\n  \\\"use\\n}\",\"operationName\":\"signinInput\"},{\"query\":\"mutation signinInput($username: String!, $password: String!) {\\n  signin(input: {username: $username, password: $password}) {\\n    name\\n    nickname\\n    token\\n  }\\n}\",\"variables\":\"{\\n  \\\"username\\\": \\\"carlosoteras@gmail.com\\\",\\n  \\\"password\\\": \\\"abc12345\\\"\\n}\",\"operationName\":\"signinInput\"}]}",
+      "graphiql:editorFlex": 1,
+      "graphiql:operationName": "signinInput",
+      "graphiql:variableEditorHeight": 200,
+      "graphiql:docExplorerWidth": 350
+    },
+    {
+      "id": "tab5",
+      "name": "Categories",
+      "url": "http://localhost:4000/api",
+      "websocketUrl": "",
+      "proxy": false,
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJqZXdlbHJ5X3N0b3JlIiwiZXhwIjoxNjM1MjExMjM5LCJpYXQiOjE2MzQ2MDY0MzksImlzcyI6Impld2Vscnlfc3RvcmUiLCJqdGkiOiI3OWRmYjc5Zi1iZmEyLTQ3NWUtYTEwYy05ZWIyYmUzZTM0N2EiLCJuYmYiOjE2MzQ2MDY0MzgsInN1YiI6IjIiLCJ0eXAiOiJyZWZyZXNoIn0.2__NONr9kP3MMlsUmvX9ilHyBJXwd4IqpvljRaugkIkdNC9BVzzgMaS5fvPLNZ5sGdf990kp1SE4wvasyeWaHg"
+        }
+      ],
+      "collapsed": false,
+      "maxHistory": 20,
+      "history": [
+        {
+          "query": "mutation createCategoryInput($name: String!, $active: Boolean!) {\n  createCategory(input: {name: $name, active: $active}) {\n    name\n    slug\n    active\n  }\n}",
+          "variables": {
+            "name": "Brincos em aço Inox",
+            "active": true
+          }
+        },
+        {
+          "query": "mutation createCategoryInput($name: String!, $active: Boolean!) {\n  createCategory(input: {name: $name, active: $active}) {\n    name\n    slug\n    active\n  }\n}",
+          "variables": {
+            "name": "Brincos em aço Inox",
+            "active": true
+          }
+        },
+        {
+          "query": "mutation createCategoryInput($name: String!, $active: Boolean!) {\n  createCategory(input: {name: $name, active: $active}) {\n    name\n    slug\n    active\n  }\n}",
+          "variables": {
+            "name": "Brincos em aço Inox",
+            "active": true
+          }
+        },
+        {
+          "query": "mutation createCategoryInput($name: String!, $active: Boolean!) {\n  createCategory(input: {name: $name, active: $active}) {\n    name\n    slug\n    active\n  }\n}",
+          "variables": {
+            "name": "Brincos em aço Inox",
+            "active": true
+          }
+        },
+        {
+          "query": "mutation createCategoryInput($name: String!, $active: Boolean!) {\n  createCategory(input: {name: $name, active: $active}) {\n    name\n    slug\n    active\n  }\n}",
+          "variables": {
+            "name": "Brincos em aço Inox",
+            "active": true
+          }
+        },
+        {
+          "query": "mutation createCategoryInput($name: String!, $active: Boolean!) {\n  createCategory(input: {name: $name, active: $active}) {\n    name\n    slug\n    active\n  }\n}",
+          "variables": {
+            "name": "Brincos em aço Inox",
+            "active": true
+          }
+        },
+        {
+          "query": "mutation createCategoryInput($name: String!, $active: Boolean!) {\n  createCategory(input: {name: $name, active: $active}) {\n    name\n    slug\n    active\n  }\n}",
+          "variables": {
+            "name": "Brincos em aço Inox",
+            "active": true
+          }
+        },
+        {
+          "query": "mutation createCategoryInput($name: String!, $active: Boolean!) {\n  createCategory(input: {name: $name, active: $active}) {\n    name\n    slug\n    active\n  }\n}",
+          "variables": {
+            "name": "Brincos em aço Inox",
+            "active": true
+          }
+        },
+        {
+          "query": "mutation createCategoryInput($name: String!, $active: Boolean!) {\n  createCategory(input: {name: $name, active: $active}) {\n    name\n    slug\n    active\n  }\n}",
+          "variables": {
+            "name": "Brincos em aço Inox",
+            "active": true
+          }
+        }
+      ],
+      "graphiql:query": "mutation createCategoryInput($name: String!, $active: Boolean!) {\n  createCategory(input: {name: $name, active: $active}) {\n    name\n    slug\n    active\n  }\n}",
+      "graphiql:variables": "{\n  \"name\": \"Brincos em aço Inox\",\n  \"active\": true\n}",
+      "graphiql:operationName": "createCategoryInput",
+      "graphiql:docExplorerWidth": 350,
+      "graphiql:editorFlex": 1,
+      "graphiql:queries": "{\"queries\":[{\"query\":\"mutation createCategoryInput($name: String!, $active: Boolean!) {\\n  createCategory(input: {name: $name, active: $active}) {\\n    name\\n    slug\\n    active\\n  }\\n}\",\"variables\":\"{\\n  \\\"name\\\": \\\"Brincos em aço Inox\\\",\\n  \\\"active\\\": true\\n}\",\"operationName\":\"createCategoryInput\"}]}",
+      "graphiql:variableEditorHeight": 200
+    }
+  ]
+}
