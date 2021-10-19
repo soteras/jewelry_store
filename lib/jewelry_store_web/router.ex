@@ -13,17 +13,19 @@ defmodule JewelryStoreWeb.Router do
     plug JewelryStore.Authentication.Pipeline
   end
 
+  pipeline :graphql do
+    plug JewelryStoreWeb.Plug.Context
+  end
+
   scope "/api/graphiql" do
     pipe_through [:api]
 
     if Mix.env() == :dev do
-      forward "/public", JewelryStoreWeb.Plug.PublicGraphiql,
-        schema: JewelryStoreWeb.PublicSchema
+      forward "/public", JewelryStoreWeb.Plug.PublicGraphiql, schema: JewelryStoreWeb.PublicSchema
     end
 
     if Mix.env() == :dev do
-      forward "/", JewelryStoreWeb.Plug.Graphiql,
-        schema: JewelryStoreWeb.Schema
+      forward "/", JewelryStoreWeb.Plug.Graphiql, schema: JewelryStoreWeb.Schema
     end
   end
 
@@ -34,9 +36,7 @@ defmodule JewelryStoreWeb.Router do
   end
 
   scope "/api" do
-    pipe_through [:api, :auth]
-
-    resources "/categories", JewelryStoreWeb.CategoryController, only: [:create, :update]
+    pipe_through [:api, :auth, :graphql]
 
     forward "/", JewelryStoreWeb.Plug.Absinthe, schema: JewelryStoreWeb.Schema
   end
