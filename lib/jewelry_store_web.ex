@@ -13,7 +13,6 @@ defmodule JewelryStoreWeb do
       import Plug.Conn
       import JewelryStoreWeb.Gettext
       import JewelryStoreWeb, only: [render_response: 2, render_response: 3]
-      import Guardian.Plug, only: [current_resource: 1, current_resource: 2]
     end
   end
 
