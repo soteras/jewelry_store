@@ -51,4 +51,15 @@ defmodule JewelryStore.AuthenticationTest do
       assert {:error, "password not valid"} = Authentication.authenticate("test@gmail.com", "abc")
     end
   end
+
+  describe "current_resource/1" do
+    test "get resource from token" do
+      user = insert(:user)
+
+      {:ok, token} = Authentication.generate_refresh_token(user)
+      {:ok, resource} = Authentication.current_resource(token)
+
+      assert user.id == resource.id
+    end
+  end
 end
