@@ -3,8 +3,14 @@ defmodule JewelryStoreWeb.Schema do
 
   alias JewelryStoreWeb.Middleware.ErrorHandler
 
+  import_types(JewelryStoreWeb.Schema.Categories.Mutation)
+
   query do
     field :wip, :string
+  end
+
+  mutation do
+    import_fields(:create_category_mutation)
   end
 
   def middleware(middleware, _field, %{identifier: type}) when type in [:query, :mutation],
