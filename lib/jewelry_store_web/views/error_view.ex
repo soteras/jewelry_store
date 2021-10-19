@@ -8,20 +8,4 @@ defmodule JewelryStoreWeb.ErrorView do
   def translate_errors(changeset) do
     Ecto.Changeset.traverse_errors(changeset, &translate_error/1)
   end
-
-  def render("error.json", %{changeset: %Ecto.Changeset{} = changeset}) do
-    %{
-      error: %{
-        details: translate_errors(changeset)
-      }
-    }
-  end
-
-  def render("error.json", %{error: error}) do
-    %{
-      error: %{
-        details: [error]
-      }
-    }
-  end
 end
