@@ -36,7 +36,7 @@ jobs:
         uses: actions/setup-elixir@v1
         with:
           otp-version: '24'
-          elixir-version: '1.12.3-otp-24'
+          elixir-version: '1.12.3'
           experimental-otp: true
       
       - name: Install Dependencies
