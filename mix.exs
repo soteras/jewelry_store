@@ -5,7 +5,7 @@ defmodule JewelryStore.MixProject do
     [
       app: :jewelry_store,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
       elixirc_options: [warnings_as_errors: true, ignore_module_conflict: true],
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
