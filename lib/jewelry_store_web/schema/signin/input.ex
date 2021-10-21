@@ -1,4 +1,4 @@
-defmodule JewelryStoreWeb.Schema.Signin.Type do
+defmodule JewelryStoreWeb.Schema.Signin.Input do
   use Absinthe.Schema.Notation
 
   input_object :signin_input do

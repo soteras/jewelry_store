@@ -3,7 +3,7 @@ defmodule JewelryStoreWeb.Schema.Signup.Mutation do
 
   alias JewelryStoreWeb.Schema.Signup.Resolver
 
-  import_types(JewelryStoreWeb.Schema.Signup.Type)
+  import_types(JewelryStoreWeb.Schema.Signup.Input)
 
   object :signup_mutation do
     @desc "Cria um novo usuário"

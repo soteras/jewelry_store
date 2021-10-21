@@ -1,4 +1,4 @@
-defmodule JewelryStoreWeb.Schema.Signup.Type do
+defmodule JewelryStoreWeb.Schema.Signup.Input do
   use Absinthe.Schema.Notation
 
   import_types(Absinthe.Type.Custom)
