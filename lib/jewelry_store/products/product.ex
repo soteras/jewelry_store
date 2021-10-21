@@ -6,7 +6,7 @@ defmodule JewelryStore.Products.Product do
   alias JewelryStore.Types.{DowncaseString, TrimmedString}
 
   @required_fields [:name, :sku, :price, :short_description, :description, :category_id]
-  @optional_fields [:quantity]
+  @optional_fields [:quantity, :active]
 
   schema "products" do
     field :name, TrimmedString
@@ -16,6 +16,7 @@ defmodule JewelryStore.Products.Product do
     field :short_description, TrimmedString
     field :description, TrimmedString
     field :quantity, :integer, default: 0
+    field :active, :boolean, default: false
 
     belongs_to :category, Category
 
