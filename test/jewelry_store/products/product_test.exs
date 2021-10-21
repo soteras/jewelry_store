@@ -10,7 +10,8 @@ defmodule JewelryStore.Products.ProductTest do
     price: "1200,23",
     short_description: "Anel seta lisa aro aberto, semijoia antialérgica banhada a ouro 22k.",
     description: "Anel seta lisa aro aberto, semijoia antialérgica banhada a ouro 22k.",
-    category_id: 1
+    category_id: 1,
+    quantity: 29
   }
 
   setup do
@@ -102,6 +103,15 @@ defmodule JewelryStore.Products.ProductTest do
         |> Repo.insert()
 
       assert get_error_message(changeset, :category) == "does not exist"
+    end
+  end
+
+  describe "changeset/2: quantity" do
+    test "less than 0" do
+      changeset = Product.changeset(%Product{}, %{@attrs | quantity: -1})
+
+      assert get_error_message(changeset, :quantity) ==
+               "must be greater than or equal to %{number}"
     end
   end
 end
