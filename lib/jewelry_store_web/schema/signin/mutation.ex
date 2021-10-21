@@ -3,7 +3,7 @@ defmodule JewelryStoreWeb.Schema.Signin.Mutation do
 
   alias JewelryStoreWeb.Schema.Signin.Resolver
 
-  import_types(JewelryStoreWeb.Schema.Signin.Type)
+  import_types(JewelryStoreWeb.Schema.Signin.Input)
 
   object :signin_mutation do
     @desc "Login"
