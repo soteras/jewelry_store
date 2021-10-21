@@ -57,11 +57,12 @@ defmodule JewelryStore.Products.DbCategoryTest do
       insert(:category, name: "Anéis em Ródio")
       insert(:category, name: "Brincos com Zircônias")
 
-      assert [%{name: "Anéis em Ródio"}, %{name: "Brincos com Zircônias"}] = Db.list_categories()
+      assert {:ok, [%{name: "Anéis em Ródio"}, %{name: "Brincos com Zircônias"}]} =
+               Db.list_categories()
     end
 
     test "returns an empty list" do
-      assert [] = Db.list_categories()
+      assert {:ok, []} = Db.list_categories()
     end
   end
 end

@@ -3,10 +3,17 @@ defmodule JewelryStoreWeb.Schema do
 
   alias JewelryStoreWeb.Middleware.ErrorHandler
 
+  # types
+  import_types(JewelryStoreWeb.Schema.Categories.Type)
+
+  # queries
+  import_types(JewelryStoreWeb.Schema.Categories.Query)
+
+  # mutations
   import_types(JewelryStoreWeb.Schema.Categories.Mutation)
 
   query do
-    field :wip, :string
+    import_fields(:categories_query)
   end
 
   mutation do

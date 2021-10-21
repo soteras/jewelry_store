@@ -3,8 +3,6 @@ defmodule JewelryStoreWeb.Schema.Categories.Mutation do
 
   alias JewelryStoreWeb.Schema.Categories.Resolver
 
-  import_types(JewelryStoreWeb.Schema.Categories.Type)
-
   object :create_category_mutation do
     @desc "Create category"
     field :create_category, type: :category do
