@@ -11,6 +11,16 @@ defmodule JewelryStoreWeb.Schema.Categories.ResolverTest do
   }
   """
 
+  @update_category_query """
+  mutation updateCategoryInput($id: Int!, $name: String!, $active: Boolean!) {
+    updateCategory(id: $id, input: {name: $name, active: $active}) {
+      name
+      slug
+      active
+    }
+  }
+  """
+
   @params %{
     name: "Brincos em aço Inox",
     active: true
@@ -44,6 +54,46 @@ defmodule JewelryStoreWeb.Schema.Categories.ResolverTest do
         |> post("/api", %{
           "query" => @create_category_query,
           "variables" => @params
+        })
+
+      assert data = json_response(response, 200)
+
+      [error] = get_errors(data)
+
+      assert error["message"] == "unauthorized"
+    end
+  end
+
+  describe "mutation: updateCategory" do
+    test "update category", %{conn: conn} do
+      user = insert(:user, admin: true)
+      category = insert(:category)
+
+      response =
+        conn
+        |> login(user)
+        |> post("/api", %{
+          "query" => @update_category_query,
+          "variables" => Map.put(@params, "id", category.id)
+        })
+
+      assert data = json_response(response, 200)
+
+      assert get_data(data, "updateCategory", "name") == "Brincos em aço Inox"
+      assert get_data(data, "updateCategory", "slug") == "brincos-em-aco-inox"
+      assert get_data(data, "updateCategory", "active")
+    end
+
+    test "forbidden for not admin user", %{conn: conn} do
+      user = insert(:user, admin: false)
+      category = insert(:category)
+
+      response =
+        conn
+        |> login(user)
+        |> post("/api", %{
+          "query" => @update_category_query,
+          "variables" => Map.put(@params, "id", category.id)
         })
 
       assert data = json_response(response, 200)
