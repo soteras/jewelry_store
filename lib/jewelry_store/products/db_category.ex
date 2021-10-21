@@ -30,5 +30,5 @@ defmodule JewelryStore.Products.DbCategory do
   end
 
   @spec list_categories() :: [category]
-  def list_categories, do: Repo.all(base_query())
+  def list_categories, do: {:ok, Repo.all(base_query())}
 end
