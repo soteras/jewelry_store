@@ -1,4 +1,4 @@
-defmodule JewelryStoreWeb.Schema.Categories.ResolverTest do
+defmodule JewelryStoreWeb.Schema.Categories.MutationTest do
   use JewelryStoreWeb.ConnCase, async: true
 
   @create_category_query """
