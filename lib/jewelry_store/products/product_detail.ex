@@ -4,10 +4,12 @@ defmodule JewelryStore.Products.ProductDetail do
 
   alias JewelryStore.Products.Product
 
-  @required_fields [:type, :value, :product_id]
+  @required_fields [:type, :value]
+  @optional_fields [:product_id]
   @types [
     "banho",
-    "tamanho"
+    "tamanho",
+    "garantia"
   ]
 
   schema "product_details" do
@@ -21,7 +23,7 @@ defmodule JewelryStore.Products.ProductDetail do
 
   def changeset(%__MODULE__{} = struct, attrs) do
     struct
-    |> cast(attrs, @required_fields)
+    |> cast(attrs, @required_fields ++ @optional_fields)
     |> validate_required(@required_fields)
     |> validate_inclusion(:type, @types)
     |> assoc_constraint(:product)
