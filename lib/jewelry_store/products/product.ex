@@ -47,4 +47,18 @@ defmodule JewelryStore.Products.Product do
         changeset
     end
   end
+
+  def from_struct(product) do
+    %{
+      id: product.id,
+      slug: product.slug,
+      name: product.name,
+      sku: product.sku,
+      price: product.price.amount,
+      short_description: product.short_description,
+      description: product.description,
+      quantity: product.quantity,
+      active: product.active
+    }
+  end
 end
