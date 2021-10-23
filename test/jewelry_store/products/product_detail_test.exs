@@ -42,12 +42,6 @@ defmodule JewelryStore.Products.ProductDetailTest do
   end
 
   describe "changeset/2: product" do
-    test "is empty" do
-      changeset = ProductDetail.changeset(%ProductDetail{}, %{product_id: ""})
-
-      assert get_error_message(changeset, :product_id) == "can't be blank"
-    end
-
     test "product not exist" do
       attrs = %{
         type: "banho",
