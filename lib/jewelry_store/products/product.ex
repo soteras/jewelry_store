@@ -3,6 +3,7 @@ defmodule JewelryStore.Products.Product do
   import Ecto.Changeset
 
   alias JewelryStore.Products.Category
+  alias JewelryStore.Products.ProductDetail
   alias JewelryStore.Types.{DowncaseString, TrimmedString}
 
   @required_fields [:name, :sku, :price, :short_description, :description, :category_id]
@@ -19,6 +20,7 @@ defmodule JewelryStore.Products.Product do
     field :active, :boolean, default: false
 
     belongs_to :category, Category
+    has_many :product_details, ProductDetail
 
     timestamps()
   end
@@ -33,6 +35,7 @@ defmodule JewelryStore.Products.Product do
     |> unique_constraint(:sku)
     |> validate_number(:quantity, greater_than_or_equal_to: 0)
     |> assoc_constraint(:category)
+    |> cast_assoc(:product_details, with: &ProductDetail.changeset/2)
   end
 
   defp slugify_name(changeset) do
