@@ -47,7 +47,12 @@ category2 =
   description: "Brinco fixo lua decorada vazada, semijoia antialérgica banhada a ouro 22k",
   quantity: 8,
   active: true,
-  category_id: category1.id
+  category_id: category1.id,
+  product_details: [
+    %{type: "garantia", value: "01 ano"},
+    %{type: "banho", value: "Ouro 22k"},
+    %{type: "tamanho", value: "1,10 cm"}
+  ]
 })
 |> Repo.insert!()
 
@@ -62,7 +67,12 @@ category2 =
     "Brinco fixo gota pequena abaulada lisa,  semijoia antialérgica banhada a ouro 22k.",
   quantity: 1,
   active: true,
-  category_id: category1.id
+  category_id: category1.id,
+  product_details: [
+    %{type: "garantia", value: "01 ano"},
+    %{type: "banho", value: "Ouro 22k"},
+    %{type: "tamanho", value: "1,10 cm"}
+  ]
 })
 |> Repo.insert!()
 
@@ -78,6 +88,10 @@ category2 =
     "Conjunto coração microzircônias pink e ródio negro, semijoias antialérgica banhada a ouro 22K",
   quantity: 11,
   active: true,
-  category_id: category2.id
+  category_id: category2.id,
+  product_details: [
+    %{type: "banho", value: "Ouro 22k"},
+    %{type: "tamanho", value: "45 cm"}
+  ]
 })
 |> Repo.insert!()
