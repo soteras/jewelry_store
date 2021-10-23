@@ -12,4 +12,13 @@ defmodule JewelryStoreWeb.Schema.Products.Mutation do
       resolve(&Resolver.create_product/3)
     end
   end
+
+  object :update_product_mutation do
+    @desc "Update product"
+    field :update_product, type: :product do
+      arg(:id, non_null(:integer))
+      arg(:input, non_null(:product_input))
+      resolve(&Resolver.update_product/3)
+    end
+  end
 end

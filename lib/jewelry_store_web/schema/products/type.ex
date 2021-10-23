@@ -2,6 +2,7 @@ defmodule JewelryStoreWeb.Schema.Products.Type do
   use Absinthe.Schema.Notation
 
   object :product do
+    field :id, :integer, description: "ID"
     field :name, :string, description: "Nome"
     field :slug, :string, description: "Slug"
     field :sku, :string, description: "SKU"

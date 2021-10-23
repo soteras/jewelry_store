@@ -10,7 +10,7 @@ defmodule JewelryStoreWeb.Schema.Products.Input do
     field :short_description, non_null(:string), description: "Descrição curta"
     field :description, non_null(:string), description: "Descrição longa"
     field :quantity, :integer, description: "Quantidade em estoque"
-    field :category_id, non_null(:integer), description: "ID da categoria"
+    field :category_id, :integer, description: "ID da categoria"
     field :active, :boolean, description: "Ativo?"
   end
 end
